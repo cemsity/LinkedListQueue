@@ -15,7 +15,7 @@ public class LinkedIntQueue
    //Methods
    
       //enque inserts an element at the rear of the queue
-      public void enque(int d)
+      public void enqueue(int d)
       {
          Node newNode = new Node(d);
          
@@ -36,16 +36,60 @@ public class LinkedIntQueue
       }//end enque
       
       //deque  removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes
-   
+      public int dequeue()
+      {
+         int rv = 0;
+         if(!isEmpty())
+         {
+            rv = front.getData();
+            if (count > 1)
+            {
+            front = front.getNext();
+            }//close count > 1
+            else // count === 1;
+            {
+               front= null;
+               rear = null;
+            }//end else count > 1 
+             
+         }//close !isEmpty
+         
+         
+         count--;
+         return rv;
+      }
       //isEmpty
       public boolean isEmpty()
       {
          return front == null;
       }//end isEmpty
       //isFull
-   
+      public boolean isFull()
+      {
+         return false;
+      }
       //size
+      public int size()
+      {
+       return count;
+      }
 
 
+public static void main(String[]	args)	
+{ //create a queue 
+   LinkedIntQueue	iq	= new	LinkedIntQueue();
+   for (int x = 0; x < 10; x++)
+   {
+      int datum = (x*8)%13;
+      iq.enqueue(datum);
+   }
+   
+   while(!iq.isEmpty())
+   {
+      
+      System.out.println( iq.dequeue());
+      
+   }
+}
 
 }// end class
