@@ -19,16 +19,16 @@ public class LinkedIntQueue
       {
          Node newNode = new Node(d);
          
-         if (!isEmpty)
+         if (!isEmpty())
          {
-            rear.next = newNode;
+            rear.setNext(newNode);
             rear = newNode;
          }
          else //empty
          {
             front = newNode;
-            front.next = newNode;
-            rear= newNode;
+            front.setNext(newNode);
+            rear = newNode;
          }//end else
          
          count++;
@@ -38,7 +38,10 @@ public class LinkedIntQueue
       //deque  removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns it removes the element at front of queue and returns itremoves the element at front of queue and returns it removes the element at front of queue and returns it removes
    
       //isEmpty
-   
+      public boolean isEmpty()
+      {
+         return front == null;
+      }//end isEmpty
       //isFull
    
       //size

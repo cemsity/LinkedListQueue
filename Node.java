@@ -16,5 +16,8 @@ public class Node
    {
    return data;
    }//end getData
-
+   public void setNext(Node n)
+   {
+      next=n;
+   }
 }//end Class
